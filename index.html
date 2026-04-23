@@ -1510,104 +1510,221 @@
       }
 
       /* ═══════════════════════════════════════════════
-   GALLERY — GREENHOUSE WINDOW PANES
+   GALLERY — CINEMATIC COMMUNITY STAGE
 ═══════════════════════════════════════════════ */
       .gallery-section {
+        background: var(--forest-deep);
         position: relative;
+      }
+      .gallery-section .section-header .eyebrow {
+        color: var(--amber-light);
+        background: rgba(200, 125, 14, 0.12);
+        border-color: rgba(200, 125, 14, 0.28);
+      }
+      .gallery-section .section-header h2 {
+        color: var(--amber-glow);
+      }
+      .gallery-section .section-header p {
+        color: rgba(248, 244, 234, 0.68);
       }
 
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.9rem;
-      }
-      .gallery-pane {
-        aspect-ratio: 4/3;
-        border-radius: var(--r-sm);
-        background: var(--petal-dark);
-        border: 2px solid rgba(74, 122, 80, 0.18);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.55rem;
-        color: rgba(42, 80, 53, 0.28);
+      /* ── Video Hero ── */
+      .gh-video-hero {
         position: relative;
+        border-radius: var(--r);
         overflow: hidden;
-        transition:
-          border-color var(--t),
-          background var(--t),
-          color var(--t),
-          transform var(--t);
+        height: clamp(300px, 55vw, 660px);
+        margin-bottom: 1rem;
+        background: var(--forest);
       }
-      .gallery-pane img {
+      .gh-video {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
+      }
+      .gh-overlay {
         position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        transition: transform 0.4s ease;
-      }
-      .gallery-pane:hover img {
-        transform: scale(1.05);
-      }
-      /* Window cross-bar detail — only on empty placeholder panes */
-      .gallery-pane.placeholder::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        width: 1px;
-        background: rgba(74, 122, 80, 0.12);
-      }
-      .gallery-pane.placeholder::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        height: 1px;
-        background: rgba(74, 122, 80, 0.12);
-      }
-      .gallery-pane:hover {
-        border-color: rgba(200, 125, 14, 0.38);
-        background: rgba(200, 125, 14, 0.05);
-        color: rgba(42, 80, 53, 0.5);
-      }
-      .gallery-pane i {
-        font-size: 1.6rem;
-        position: relative;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(11, 22, 12, 0.94) 0%,
+          rgba(11, 22, 12, 0.38) 42%,
+          rgba(11, 22, 12, 0.08) 100%
+        );
         z-index: 1;
       }
-      .gallery-pane span {
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        position: relative;
-        z-index: 1;
-      }
-
-      .gallery-note {
+      .gh-content {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
         text-align: center;
-        margin-top: 2.5rem;
+        padding: 2rem 2rem clamp(2.5rem, 5vw, 4.5rem);
+        gap: 1rem;
       }
-      .gallery-pill {
+      .gh-badge {
+        display: inline-block;
+        font-family: "Jost", sans-serif;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--amber-glow);
+        background: rgba(200, 125, 14, 0.18);
+        border: 1px solid rgba(200, 125, 14, 0.38);
+        padding: 0.32rem 1.1rem;
+        border-radius: 50px;
+      }
+      .gh-headline {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.9rem, 4.5vw, 4.2rem);
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.08;
+        text-shadow: 0 2px 30px rgba(11, 22, 12, 0.6);
+        margin: 0;
+      }
+      .gh-sub {
+        font-family: "Jost", sans-serif;
+        font-size: clamp(0.85rem, 1.3vw, 1rem);
+        color: rgba(248, 244, 234, 0.78);
+        max-width: 50ch;
+        line-height: 1.65;
+        margin: 0;
+      }
+      .gh-cta-btn {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        background: rgba(184, 88, 48, 0.07);
-        border: 1px solid rgba(184, 88, 48, 0.2);
-        color: var(--terracotta);
+        gap: 0.55rem;
+        background: var(--terracotta);
+        color: #fff;
         font-family: "Jost", sans-serif;
-        font-size: 0.85rem;
         font-weight: 600;
+        font-size: 0.92rem;
         letter-spacing: 0.05em;
-        padding: 0.65rem 1.75rem;
+        text-transform: uppercase;
+        padding: 0.82rem 2.2rem;
         border-radius: 50px;
+        text-decoration: none;
+        margin-top: 0.4rem;
+        transition:
+          background var(--t),
+          transform var(--t),
+          box-shadow var(--t);
+        box-shadow: 0 6px 28px rgba(184, 88, 48, 0.45);
+      }
+      .gh-cta-btn:hover {
+        background: var(--clay);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 40px rgba(184, 88, 48, 0.55);
+        color: #fff;
+      }
+      .gh-cta-btn i {
+        font-size: 0.75rem;
+        transition: transform var(--t);
+      }
+      .gh-cta-btn:hover i {
+        transform: translateX(4px);
+      }
+
+      /* ── Floating Controls ── */
+      .gh-controls {
+        position: absolute;
+        bottom: 1.1rem;
+        right: 1.1rem;
+        z-index: 3;
+        display: flex;
+        gap: 0.45rem;
+      }
+      .gh-ctrl {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(11, 22, 12, 0.55);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.78rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition:
+          background var(--t),
+          color var(--t),
+          transform 0.2s;
+      }
+      .gh-ctrl:hover {
+        background: rgba(200, 125, 14, 0.42);
+        color: #fff;
+        transform: scale(1.12);
+      }
+
+      /* ── Mosaic Photo Grid ── */
+      .mosaic-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 215px;
+        gap: 10px;
+      }
+      .mosaic-item {
+        border-radius: var(--r-sm);
+        overflow: hidden;
+        position: relative;
+        background: var(--forest);
+      }
+      .mosaic-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.55s var(--ease);
+      }
+      .mosaic-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(11, 22, 12, 0.65) 0%,
+          transparent 52%
+        );
+        opacity: 0;
+        transition: opacity 0.35s var(--ease);
+        z-index: 1;
+        pointer-events: none;
+      }
+      .mosaic-item:hover img {
+        transform: scale(1.06);
+      }
+      .mosaic-item:hover::after {
+        opacity: 1;
+      }
+      .mosaic-item::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 2px solid transparent;
+        border-radius: var(--r-sm);
+        transition: border-color 0.35s var(--ease);
+        z-index: 2;
+        pointer-events: none;
+      }
+      .mosaic-item:hover::before {
+        border-color: rgba(200, 125, 14, 0.58);
+      }
+      /* Photo 1: tall left anchor (spans 2 rows) */
+      .mosaic-item:nth-child(1) {
+        grid-row: 1 / 3;
+      }
+      /* Photo 6: full-width cinematic panoramic strip */
+      .mosaic-item:nth-child(6) {
+        grid-column: 1 / 4;
       }
 
       /* ═══════════════════════════════════════════════
@@ -1878,10 +1995,18 @@
           max-width: 380px;
           margin: 0 auto;
         }
-        .gallery-grid {
-          grid-template-columns: 1fr;
-          max-width: 500px;
-          margin: 0 auto;
+        .mosaic-grid {
+          grid-template-columns: 1fr 1fr;
+          grid-auto-rows: 180px;
+        }
+        .mosaic-item:nth-child(1) {
+          grid-row: auto;
+        }
+        .mosaic-item:nth-child(6) {
+          grid-column: 1 / 3;
+        }
+        .gh-video-hero {
+          height: clamp(240px, 60vw, 420px);
         }
         .contact-grid {
           grid-template-columns: 1fr;
@@ -1914,6 +2039,16 @@
         }
         .contact-card {
           padding: 2.25rem 1.75rem;
+        }
+        .mosaic-grid {
+          grid-template-columns: 1fr;
+          grid-auto-rows: 210px;
+        }
+        .mosaic-item:nth-child(6) {
+          grid-column: auto;
+        }
+        .gh-headline {
+          font-size: 1.65rem;
         }
       }
     </style>
@@ -2580,7 +2715,7 @@
       <div
         class="wave-divider"
         aria-hidden="true"
-        style="background: var(--cream-warm)"
+        style="background: var(--forest-deep)"
       >
         <svg
           viewBox="0 0 1440 50"
@@ -2590,59 +2725,111 @@
         >
           <path
             d="M0,15 C400,50 800,0 1200,35 C1320,45 1390,25 1440,30 L1440,50 L0,50Z"
-            fill="var(--petal)"
+            fill="var(--cream-warm)"
           />
         </svg>
       </div>
 
       <!-- ══════════════ GALLERY ══════════════ -->
-      <section id="gallery" class="section-pad bg-petal gallery-section">
+      <section id="gallery" class="section-pad gallery-section">
         <div class="container">
           <div class="section-header fade-up">
             <span class="eyebrow">Our Community</span>
-            <h2>Gallery</h2>
+            <h2>In the Field</h2>
             <p>
-              Moments from our workshops, skill sessions, and community events.
+              Authentic moments from our workshops, culinary sessions, and
+              community gatherings.
             </p>
           </div>
 
-          <div class="gallery-grid stagger">
-            <div class="gallery-pane fade-up">
+          <!-- ── Video Hero ── -->
+          <div class="gh-video-hero fade-up">
+            <video
+              class="gh-video"
+              id="ghVideo"
+              src="assets/video1.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+            <div class="gh-overlay"></div>
+            <div class="gh-content">
+              <span class="gh-badge">Our Community in Action</span>
+              <h2 class="gh-headline">
+                A Nurturing Greenhouse<br />for Growing Minds
+              </h2>
+              <p class="gh-sub">
+                Raising mentally resilient, life&#8209;skilled, and purposeful
+                young people — one workshop at a time.
+              </p>
+              <a href="#contact" class="gh-cta-btn">
+                Get Involved
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="gh-controls">
+              <button
+                class="gh-ctrl"
+                id="ghUnmute"
+                aria-label="Toggle sound"
+                title="Toggle sound"
+              >
+                <i class="fa-solid fa-volume-xmark" id="ghSoundIcon"></i>
+              </button>
+              <button
+                class="gh-ctrl"
+                id="ghFullscreen"
+                aria-label="Fullscreen"
+                title="Enter fullscreen"
+              >
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ── Mosaic Photo Grid ── -->
+          <div class="mosaic-grid stagger">
+            <div class="mosaic-item fade-up">
               <img
                 src="assets/gallery1.jpeg"
-                alt="Youth choir performing at a holiday event with a Christmas tree in the background"
+                alt="Youth choir performing at a holiday event"
                 loading="lazy"
               />
             </div>
-            <div class="gallery-pane fade-up">
+            <div class="mosaic-item fade-up">
               <img
                 src="assets/gallery2.jpeg"
                 alt="Youth group performing for the community during a holiday gathering"
                 loading="lazy"
               />
-                          <div class="gallery-pane fade-up">
-              <img
-                src="assets/gallery4.jpeg"
-                alt="Youth group performing for the community during a holiday gathering"
-                loading="lazy"
-              />
-                          <div class="gallery-pane fade-up">
-              <img
-                src="assets/gallery5.png"
-                alt="Youth group performing for the community during a holiday gathering"
-                loading="lazy"
-              />
-                          <div class="gallery-pane fade-up">
-              <img
-                src="assets/gallery6.png"
-                alt="Youth group performing for the community during a holiday gathering"
-                loading="lazy"
-              />
             </div>
-            <div class="gallery-pane fade-up">
+            <div class="mosaic-item fade-up">
               <img
                 src="assets/gallery3.jpeg"
                 alt="Youth singing and playing piano at a community celebration"
+                loading="lazy"
+              />
+            </div>
+            <div class="mosaic-item fade-up">
+              <img
+                src="assets/gallery4.png"
+                alt="Youth learning to make dumplings and pastries with a mentor"
+                loading="lazy"
+              />
+            </div>
+            <div class="mosaic-item fade-up">
+              <img
+                src="assets/gallery5.png"
+                alt="Mentor demonstrating dough rolling technique while youth watch"
+                loading="lazy"
+              />
+            </div>
+            <div class="mosaic-item fade-up">
+              <img
+                src="assets/gallery6.png"
+                alt="Youth and mentor in a hands-on culinary arts session making pastries"
                 loading="lazy"
               />
             </div>
@@ -3147,6 +3334,32 @@
             }
           });
         });
+
+        /* ─ Gallery video controls ─ */
+        (function () {
+          var vid = document.getElementById("ghVideo");
+          var muteBtn = document.getElementById("ghUnmute");
+          var soundIcon = document.getElementById("ghSoundIcon");
+          var fsBtn = document.getElementById("ghFullscreen");
+          if (vid && muteBtn) {
+            muteBtn.addEventListener("click", function () {
+              vid.muted = !vid.muted;
+              soundIcon.className = vid.muted
+                ? "fa-solid fa-volume-xmark"
+                : "fa-solid fa-volume-high";
+            });
+          }
+          if (vid && fsBtn) {
+            fsBtn.addEventListener("click", function () {
+              var hero = vid.closest(".gh-video-hero");
+              if (document.fullscreenElement) {
+                document.exitFullscreen();
+              } else {
+                (hero || vid).requestFullscreen();
+              }
+            });
+          }
+        })();
 
         /* ─ Scroll-triggered fade-up ─ */
         var motionOk = window.matchMedia(
