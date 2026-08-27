@@ -3,11 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thriving Youth Pathways — The Nurturing Greenhouse</title>
-    <meta
-      name="description"
-      content="Thriving Youth Pathways empowers young people through mental health education, character formation, and practical life-skills training — a nurturing greenhouse for growing minds."
+    <title>Thriving Youth Pathways</title>
+    <meta name="description" content="Thriving Youth Pathways empowers young people through mental health education, character formation, and practical life-skills training — equipping every young person to grow into a confident, capable, and purposeful adult." />
+    <link rel="canonical" href="https://thrivingyouthpathways.ca/" />
+
+    <!-- Favicon / app icons (what Google shows beside the search result) -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="256x256"
+      href="assets/favicon.png"
     />
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+    <meta name="theme-color" content="#1a3320" />
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Thriving Youth Pathways" />
+    <meta property="og:title" content="Thriving Youth Pathways" />
+    <meta property="og:description" content="Thriving Youth Pathways empowers young people through mental health education, character formation, and practical life-skills training — equipping every young person to grow into a confident, capable, and purposeful adult." />
+    <meta property="og:url" content="https://thrivingyouthpathways.ca/" />
+    <meta
+      property="og:image"
+      content="https://thrivingyouthpathways.ca/assets/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Youth and mentors gathered together at a Thriving Youth Pathways community event"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Thriving Youth Pathways" />
+    <meta name="twitter:description" content="Thriving Youth Pathways empowers young people through mental health education, character formation, and practical life-skills training — equipping every young person to grow into a confident, capable, and purposeful adult." />
+    <meta
+      name="twitter:image"
+      content="https://thrivingyouthpathways.ca/assets/og-image.jpg"
+    />
+
+    <!-- Structured data: official site name + logo for Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://thrivingyouthpathways.ca/#website",
+            "url": "https://thrivingyouthpathways.ca/",
+            "name": "Thriving Youth Pathways",
+            "publisher": { "@id": "https://thrivingyouthpathways.ca/#org" }
+          },
+          {
+            "@type": ["NGO", "Organization"],
+            "@id": "https://thrivingyouthpathways.ca/#org",
+            "name": "Thriving Youth Pathways",
+            "url": "https://thrivingyouthpathways.ca/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://thrivingyouthpathways.ca/assets/Logo.png",
+              "width": 357,
+              "height": 256
+            },
+            "image": "https://thrivingyouthpathways.ca/assets/og-image.jpg",
+            "slogan": "Raising Life-Skilled, Thriving Youth",
+            "description": "Thriving Youth Pathways empowers young people through mental health education, character formation, and practical life-skills training — equipping every young person to grow into a confident, capable, and purposeful adult.",
+            "email": "thrivingyouthpathways@gmail.com",
+            "telephone": "+1-613-857-4141",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ottawa",
+              "addressRegion": "ON",
+              "addressCountry": "CA"
+            }
+          }
+        ]
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -325,6 +401,12 @@
       }
       .stagger > .fade-up:nth-child(8) {
         transition-delay: 0.24s;
+      }
+      .stagger > .fade-up:nth-child(9) {
+        transition-delay: 0.34s;
+      }
+      .stagger > .fade-up:nth-child(10) {
+        transition-delay: 0.16s;
       }
 
       /* ═══════════════════════════════════════════════
@@ -734,7 +816,7 @@
         align-items: center;
         overflow: hidden;
         background-color: var(--forest-deep);
-        background-image: url("assets/cover image.png");
+        background-image: url("assets/hero.jpg");
         background-size: cover;
         background-position: center;
       }
@@ -746,9 +828,9 @@
         z-index: 1;
         background: linear-gradient(
           155deg,
-          rgba(10, 22, 12, 0.82) 0%,
-          rgba(26, 51, 32, 0.68) 50%,
-          rgba(42, 80, 53, 0.4) 100%
+          rgba(10, 22, 12, 0.78) 0%,
+          rgba(26, 51, 32, 0.62) 50%,
+          rgba(42, 80, 53, 0.35) 100%
         );
       }
       .hero-ov-amber {
@@ -1718,12 +1800,17 @@
       .mosaic-item:hover::before {
         border-color: rgba(200, 125, 14, 0.58);
       }
-      /* Photo 1: tall left anchor (spans 2 rows) */
+      /* Tile 1: tall portrait anchor (spans 2 rows) */
       .mosaic-item:nth-child(1) {
-        grid-row: 1 / 3;
+        grid-row: span 2;
       }
-      /* Photo 6: full-width cinematic panoramic strip */
-      .mosaic-item:nth-child(6) {
+      /* Tiles 6 & 8: wide double-width panoramas */
+      .mosaic-item:nth-child(6),
+      .mosaic-item:nth-child(8) {
+        grid-column: span 2;
+      }
+      /* Tile 10: full-width cinematic panoramic strip */
+      .mosaic-item:nth-child(10) {
         grid-column: 1 / 4;
       }
 
@@ -1997,12 +2084,14 @@
         }
         .mosaic-grid {
           grid-template-columns: 1fr 1fr;
-          grid-auto-rows: 180px;
+          grid-auto-rows: clamp(140px, 24vw, 190px);
         }
-        .mosaic-item:nth-child(1) {
-          grid-row: auto;
+        .mosaic-item:nth-child(8) {
+          grid-column: auto;
         }
-        .mosaic-item:nth-child(6) {
+        .mosaic-item:nth-child(6),
+        .mosaic-item:nth-child(9),
+        .mosaic-item:nth-child(10) {
           grid-column: 1 / 3;
         }
         .gh-video-hero {
@@ -2021,6 +2110,22 @@
       @media (max-width: 540px) {
         .container {
           padding: 0 1.25rem;
+        }
+        /* keep the headline inside 320-360px viewports */
+        .hero-h1 {
+          font-size: clamp(2.3rem, 11.5vw, 3.2rem);
+        }
+        .hero-sub {
+          font-size: 1rem;
+          margin-bottom: 2.2rem;
+        }
+        /* compact brand lockup so the header never overflows */
+        .logo-img {
+          height: 42px;
+          width: 42px;
+        }
+        .logo-name {
+          font-size: 1rem;
         }
         .pillars-grid {
           grid-template-columns: 1fr;
@@ -2042,9 +2147,12 @@
         }
         .mosaic-grid {
           grid-template-columns: 1fr;
-          grid-auto-rows: 210px;
+          grid-auto-rows: clamp(170px, 52vw, 210px);
         }
-        .mosaic-item:nth-child(6) {
+        .mosaic-item:nth-child(6),
+        .mosaic-item:nth-child(8),
+        .mosaic-item:nth-child(9),
+        .mosaic-item:nth-child(10) {
           grid-column: auto;
         }
         .gh-headline {
@@ -2699,7 +2807,7 @@
             <div class="team-card fade-up">
               <div class="team-photo-wrap">
                 <img
-                  src="assets/IT_Specialist.png"
+                  src="assets/IT_Specialist.jpg"
                   alt="Jefperry Achu, IT Specialist"
                   class="team-photo"
                 />
@@ -2746,9 +2854,18 @@
           <div class="mosaic-grid stagger">
             <div class="mosaic-item fade-up">
               <img
+                src="assets/gallery9.jpg"
+                alt="Group of young men gathered together at a Thriving Youth Pathways meet-up"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="mosaic-item fade-up">
+              <img
                 src="assets/gallery1.jpeg"
                 alt="Youth choir performing at a holiday event"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="mosaic-item fade-up">
@@ -2756,6 +2873,7 @@
                 src="assets/gallery2.jpeg"
                 alt="Youth group performing for the community during a holiday gathering"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="mosaic-item fade-up">
@@ -2763,27 +2881,55 @@
                 src="assets/gallery3.jpeg"
                 alt="Youth singing and playing piano at a community celebration"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="mosaic-item fade-up">
               <img
-                src="assets/gallery4.png"
+                src="assets/gallery4.jpg"
                 alt="Youth learning to make dumplings and pastries with a mentor"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="mosaic-item fade-up">
               <img
-                src="assets/gallery5.png"
+                src="assets/gallery5.jpg"
                 alt="Mentor demonstrating dough rolling technique while youth watch"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="mosaic-item fade-up">
               <img
-                src="assets/gallery6.png"
+                src="assets/gallery6.jpg"
                 alt="Youth and mentor in a hands-on culinary arts session making pastries"
                 loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="mosaic-item fade-up">
+              <img
+                src="assets/gallery10.jpg"
+                alt="Food laid out on the table for a community barbecue and youth gathering"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="mosaic-item fade-up">
+              <img
+                src="assets/gallery7.jpg"
+                alt="Youth and mentors gathered together outdoors at a summer community event"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="mosaic-item fade-up">
+              <img
+                src="assets/gallery8.jpg"
+                alt="Youth and a mentor in an open circle discussion on the deck during a summer session"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -3121,8 +3267,8 @@
               >
             </a>
             <p>
-              A nurturing greenhouse for growing minds — raising mentally
-              resilient, life&#8209;skilled, and purposeful young people.
+              Raising mentally resilient, life&#8209;skilled, and purposeful
+              young people — one pathway at a time.
             </p>
           </div>
 
@@ -3179,7 +3325,7 @@
               color: rgba(168, 160, 152, 0.35);
             "
           >
-            The Nurturing Greenhouse
+            Raising Life-Skilled, Thriving Youth
           </p>
         </div>
       </div>
