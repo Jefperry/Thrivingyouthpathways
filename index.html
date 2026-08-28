@@ -408,6 +408,12 @@
       .stagger > .fade-up:nth-child(10) {
         transition-delay: 0.16s;
       }
+      .stagger > .fade-up:nth-child(11) {
+        transition-delay: 0.26s;
+      }
+      .stagger > .fade-up:nth-child(12) {
+        transition-delay: 0.36s;
+      }
 
       /* ═══════════════════════════════════════════════
    BOTANICAL DECORATIONS (inline SVG helpers)
@@ -1800,18 +1806,17 @@
       .mosaic-item:hover::before {
         border-color: rgba(200, 125, 14, 0.58);
       }
-      /* Tile 1: tall portrait anchor (spans 2 rows) */
-      .mosaic-item:nth-child(1) {
+      /* Tiles 1-3: tall portrait anchors across the top (span 2 rows) */
+      .mosaic-item:nth-child(1),
+      .mosaic-item:nth-child(2),
+      .mosaic-item:nth-child(3) {
         grid-row: span 2;
       }
-      /* Tiles 6 & 8: wide double-width panoramas */
-      .mosaic-item:nth-child(6),
-      .mosaic-item:nth-child(8) {
+      /* Tiles 7, 10 & 11: wide double-width panoramas */
+      .mosaic-item:nth-child(7),
+      .mosaic-item:nth-child(10),
+      .mosaic-item:nth-child(11) {
         grid-column: span 2;
-      }
-      /* Tile 10: full-width cinematic panoramic strip */
-      .mosaic-item:nth-child(10) {
-        grid-column: 1 / 4;
       }
 
       /* ═══════════════════════════════════════════════
@@ -2086,12 +2091,12 @@
           grid-template-columns: 1fr 1fr;
           grid-auto-rows: clamp(140px, 24vw, 190px);
         }
-        .mosaic-item:nth-child(8) {
+        .mosaic-item:nth-child(7),
+        .mosaic-item:nth-child(10),
+        .mosaic-item:nth-child(11) {
           grid-column: auto;
         }
-        .mosaic-item:nth-child(6),
-        .mosaic-item:nth-child(9),
-        .mosaic-item:nth-child(10) {
+        .mosaic-item:nth-child(12) {
           grid-column: 1 / 3;
         }
         .gh-video-hero {
@@ -2149,10 +2154,10 @@
           grid-template-columns: 1fr;
           grid-auto-rows: clamp(170px, 52vw, 210px);
         }
-        .mosaic-item:nth-child(6),
-        .mosaic-item:nth-child(8),
-        .mosaic-item:nth-child(9),
-        .mosaic-item:nth-child(10) {
+        .mosaic-item:nth-child(7),
+        .mosaic-item:nth-child(10),
+        .mosaic-item:nth-child(11),
+        .mosaic-item:nth-child(12) {
           grid-column: auto;
         }
         .gh-headline {
@@ -2862,6 +2867,22 @@
             </div>
             <div class="mosaic-item fade-up">
               <img
+                src="assets/gallery11.jpg"
+                alt="Young women and mentors gathered for a group photo on the lawn at a summer community gathering"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="mosaic-item fade-up">
+              <img
+                src="assets/gallery12.jpg"
+                alt="Youth and mentors seated around the table under a garden gazebo sharing a meal and conversation"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="mosaic-item fade-up">
+              <img
                 src="assets/gallery1.jpeg"
                 alt="Youth choir performing at a holiday event"
                 loading="lazy"
@@ -2886,16 +2907,16 @@
             </div>
             <div class="mosaic-item fade-up">
               <img
-                src="assets/gallery4.jpg"
-                alt="Youth learning to make dumplings and pastries with a mentor"
+                src="assets/gallery5.jpg"
+                alt="Mentor demonstrating dough rolling technique while youth watch"
                 loading="lazy"
                 decoding="async"
               />
             </div>
             <div class="mosaic-item fade-up">
               <img
-                src="assets/gallery5.jpg"
-                alt="Mentor demonstrating dough rolling technique while youth watch"
+                src="assets/gallery4.jpg"
+                alt="Youth learning to make dumplings and pastries with a mentor"
                 loading="lazy"
                 decoding="async"
               />
@@ -2918,16 +2939,16 @@
             </div>
             <div class="mosaic-item fade-up">
               <img
-                src="assets/gallery7.jpg"
-                alt="Youth and mentors gathered together outdoors at a summer community event"
+                src="assets/gallery8.jpg"
+                alt="Youth and a mentor in an open circle discussion on the deck during a summer session"
                 loading="lazy"
                 decoding="async"
               />
             </div>
             <div class="mosaic-item fade-up">
               <img
-                src="assets/gallery8.jpg"
-                alt="Youth and a mentor in an open circle discussion on the deck during a summer session"
+                src="assets/gallery7.jpg"
+                alt="Youth and mentors gathered together outdoors at a summer community event"
                 loading="lazy"
                 decoding="async"
               />
