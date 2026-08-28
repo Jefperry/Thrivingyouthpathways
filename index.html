@@ -408,12 +408,6 @@
       .stagger > .fade-up:nth-child(10) {
         transition-delay: 0.16s;
       }
-      .stagger > .fade-up:nth-child(11) {
-        transition-delay: 0.26s;
-      }
-      .stagger > .fade-up:nth-child(12) {
-        transition-delay: 0.36s;
-      }
 
       /* ═══════════════════════════════════════════════
    BOTANICAL DECORATIONS (inline SVG helpers)
@@ -1806,17 +1800,47 @@
       .mosaic-item:hover::before {
         border-color: rgba(200, 125, 14, 0.58);
       }
-      /* Tiles 1-3: tall portrait anchors across the top (span 2 rows) */
-      .mosaic-item:nth-child(1),
-      .mosaic-item:nth-child(2),
-      .mosaic-item:nth-child(3) {
+      /* Tall portrait anchor (spans 2 rows) */
+      .mosaic-item--tall {
         grid-row: span 2;
       }
-      /* Tiles 7, 10 & 11: wide double-width panoramas */
-      .mosaic-item:nth-child(7),
-      .mosaic-item:nth-child(10),
-      .mosaic-item:nth-child(11) {
+      /* Wide double-width panorama */
+      .mosaic-item--wide {
         grid-column: span 2;
+      }
+
+      /* ── Activity groups within the gallery ── */
+      .gallery-group + .gallery-group {
+        margin-top: 4.5rem;
+      }
+      .gallery-group__head {
+        text-align: center;
+        max-width: 620px;
+        margin: 0 auto 2rem;
+      }
+      .gallery-group__head .eyebrow {
+        color: var(--amber-light);
+        margin-bottom: 0.5rem;
+      }
+      .gallery-group__head h3 {
+        font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+        color: var(--amber-glow);
+        margin-bottom: 0.6rem;
+      }
+      .gallery-group__head p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: rgba(248, 244, 234, 0.68);
+      }
+      .gallery-group__date {
+        display: block;
+        font-family: "Jost", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(248, 244, 234, 0.45);
+        margin-bottom: 0.5rem;
       }
 
       /* ═══════════════════════════════════════════════
@@ -2091,13 +2115,16 @@
           grid-template-columns: 1fr 1fr;
           grid-auto-rows: clamp(140px, 24vw, 190px);
         }
-        .mosaic-item:nth-child(7),
-        .mosaic-item:nth-child(10),
-        .mosaic-item:nth-child(11) {
-          grid-column: auto;
-        }
-        .mosaic-item:nth-child(12) {
+        .mosaic-item--wide {
           grid-column: 1 / 3;
+        }
+        /* Last tile spans the row so neither grid leaves a hole at 2 columns */
+        .mosaic-grid--trio .mosaic-item:nth-child(3),
+        .mosaic-grid--six .mosaic-item:nth-child(6) {
+          grid-column: 1 / 3;
+        }
+        .gallery-group + .gallery-group {
+          margin-top: 3.5rem;
         }
         .gh-video-hero {
           height: clamp(240px, 60vw, 420px);
@@ -2154,10 +2181,9 @@
           grid-template-columns: 1fr;
           grid-auto-rows: clamp(170px, 52vw, 210px);
         }
-        .mosaic-item:nth-child(7),
-        .mosaic-item:nth-child(10),
-        .mosaic-item:nth-child(11),
-        .mosaic-item:nth-child(12) {
+        .mosaic-item--wide,
+        .mosaic-grid--trio .mosaic-item:nth-child(3),
+        .mosaic-grid--six .mosaic-item:nth-child(6) {
           grid-column: auto;
         }
         .gh-headline {
@@ -2855,103 +2881,130 @@
             </p>
           </div>
 
-          <!-- ── Mosaic Photo Grid ── -->
-          <div class="mosaic-grid stagger">
-            <div class="mosaic-item fade-up">
-              <img
-                src="assets/gallery9.jpg"
-                alt="Group of young men gathered together at a Thriving Youth Pathways meet-up"
-                loading="lazy"
-                decoding="async"
-              />
+          <!-- ── Activity: Peer Support Circles ── -->
+          <div class="gallery-group">
+            <div class="gallery-group__head fade-up">
+              <span class="eyebrow">Mental &amp; Emotional Wellness</span>
+              <h3>Peer Support Circles</h3>
+              <p><span class="gallery-group__date">Summer 2026</span>A full day of open conversation — seated circles on stress, self-image and friendship, small-group check-ins, and a shared cookout to close.</p>
             </div>
-            <div class="mosaic-item fade-up">
-              <img
-                src="assets/gallery11.jpg"
-                alt="Young women and mentors gathered for a group photo on the lawn at a summer community gathering"
-                loading="lazy"
-                decoding="async"
-              />
+            <div class="mosaic-grid mosaic-grid--six stagger">
+              <div class="mosaic-item mosaic-item--tall fade-up">
+                <img
+                  src="assets/gallery9.jpg"
+                  alt="Young men in the program gathered for a group photo during the peer support circle day"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="mosaic-item mosaic-item--tall fade-up">
+                <img
+                  src="assets/gallery11.jpg"
+                  alt="Young women and mentors gathered for a group photo on the lawn during the peer support circle day"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="mosaic-item mosaic-item--tall fade-up">
+                <img
+                  src="assets/gallery12.jpg"
+                  alt="Youth and mentors seated around the table under the garden gazebo sharing a meal and conversation"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="mosaic-item fade-up">
+                <img
+                  src="assets/gallery7.jpg"
+                  alt="The full group of youth and mentors together outdoors at the summer peer support circle day"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="mosaic-item fade-up">
+                <img
+                  src="assets/gallery8.jpg"
+                  alt="Youth and a mentor in an open peer support circle on the deck, talking through stress and self-image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="mosaic-item fade-up">
+                <img
+                  src="assets/gallery10.jpg"
+                  alt="Food laid out on the table for the shared cookout closing the peer support circle day"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
-            <div class="mosaic-item fade-up">
-              <img
-                src="assets/gallery12.jpg"
-                alt="Youth and mentors seated around the table under a garden gazebo sharing a meal and conversation"
-                loading="lazy"
-                decoding="async"
-              />
+          </div>
+          <!-- ── Activity: Kitchen Skills Lab ── -->
+          <div class="gallery-group">
+            <div class="gallery-group__head fade-up">
+              <span class="eyebrow">Culinary &amp; Nutrition Skills</span>
+              <h3>Kitchen Skills Lab</h3>
+              <p><span class="gallery-group__date">Spring 2026</span>Hands-on cooking sessions where youth learn to prepare a meal from scratch — dough, dumplings and pastries, start to finish.</p>
             </div>
-            <div class="mosaic-item fade-up">
-              <img
-                src="assets/gallery1.jpeg"
-                alt="Youth choir performing at a holiday event"
-                loading="lazy"
-                decoding="async"
-              />
+            <div class="mosaic-grid mosaic-grid--trio stagger">
+              <div class="mosaic-item fade-up">
+                <img
+                  src="assets/gallery4.jpg"
+                  alt="Youth learning to make dumplings and pastries with a mentor"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="mosaic-item fade-up">
+                <img
+                  src="assets/gallery6.jpg"
+                  alt="Youth and mentor in a hands-on culinary session shaping pastries"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="mosaic-item fade-up">
+                <img
+                  src="assets/gallery5.jpg"
+                  alt="Mentor demonstrating dough rolling technique while youth watch"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
-            <div class="mosaic-item fade-up">
-              <img
-                src="assets/gallery2.jpeg"
-                alt="Youth group performing for the community during a holiday gathering"
-                loading="lazy"
-                decoding="async"
-              />
+          </div>
+          <!-- ── Activity: Christmas Showcase ── -->
+          <div class="gallery-group">
+            <div class="gallery-group__head fade-up">
+              <span class="eyebrow">Craftsmanship &amp; Practical Creativity</span>
+              <h3>Christmas Showcase</h3>
+              <p><span class="gallery-group__date">December 2025</span>Youth performing for family and community — a choir, a keyboard and a room full of people who came to listen.</p>
             </div>
-            <div class="mosaic-item fade-up">
-              <img
-                src="assets/gallery3.jpeg"
-                alt="Youth singing and playing piano at a community celebration"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="mosaic-item fade-up">
-              <img
-                src="assets/gallery5.jpg"
-                alt="Mentor demonstrating dough rolling technique while youth watch"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="mosaic-item fade-up">
-              <img
-                src="assets/gallery4.jpg"
-                alt="Youth learning to make dumplings and pastries with a mentor"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="mosaic-item fade-up">
-              <img
-                src="assets/gallery6.jpg"
-                alt="Youth and mentor in a hands-on culinary arts session making pastries"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="mosaic-item fade-up">
-              <img
-                src="assets/gallery10.jpg"
-                alt="Food laid out on the table for a community barbecue and youth gathering"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="mosaic-item fade-up">
-              <img
-                src="assets/gallery8.jpg"
-                alt="Youth and a mentor in an open circle discussion on the deck during a summer session"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="mosaic-item fade-up">
-              <img
-                src="assets/gallery7.jpg"
-                alt="Youth and mentors gathered together outdoors at a summer community event"
-                loading="lazy"
-                decoding="async"
-              />
+            <div class="mosaic-grid mosaic-grid--trio stagger">
+              <div class="mosaic-item fade-up">
+                <img
+                  src="assets/gallery1.jpeg"
+                  alt="Youth choir performing at the Christmas showcase"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="mosaic-item fade-up">
+                <img
+                  src="assets/gallery2.jpeg"
+                  alt="Youth group performing for the community during the holiday gathering"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="mosaic-item fade-up">
+                <img
+                  src="assets/gallery3.jpeg"
+                  alt="Youth singing and playing keyboard at the Christmas showcase"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
           </div>
         </div>
