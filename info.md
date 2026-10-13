@@ -16,18 +16,19 @@ entrepreneurship—equipping them to grow into responsible, confident, and capab
 CORE PILLARS
 
 1. Mental & Emotional Wellness
-   Building self‑awareness, resilience, and psychological health.
+   Building self‑awareness, resilience, stress management, and psychological health.
 2. Character, Values & Social Etiquette
    Forming respectful, disciplined, and socially competent youth.
-3. Homemaking & Independent Living Skills
+3. Homemaking, Independent Living & Culinary Skills
    Equipping youth with essential domestic competence and life readiness.
    1
 4. Craftsmanship & Practical Creativity
    Developing hands‑on skills, creativity, and appreciation for making.
-5. Culinary & Nutrition Skills
-   Teaching nourishment, self‑sufficiency, and healthy living.
-6. Entrepreneurship & Leadership
-   Raising initiative, innovation, and economic empowerment.
+5. Entrepreneurship & Leadership
+   Raising initiative, innovation, and economic empowerment — including poverty reduction.
+6. Settlement & Housing
+   Supporting newcomer children and families with settlement — language, school integration,
+   adapting to weather and seasons, clothing, and everyday shopping such as groceries.
    TARGET GROUP
    Boys and girls aged 8–18, structured into developmental stages:
    8–11 — Foundations
@@ -117,10 +118,10 @@ Holistic Youth Development & Mental Health Awareness for Life Skills and Purpose
 
 - Emotional coping and communication skills training
 - Etiquette and character formation
-- Homemaking and independent living skills
-- Culinary and nutrition training
+- Homemaking, independent living, and culinary skills
 - Craftsmanship and creative production
-- Youth entrepreneurship projects
+- Youth entrepreneurship projects (including poverty reduction)
+- Newcomer settlement and housing support
 - Leadership and service activities
 
 5. MENTAL HEALTH PROGRAM MODULE
@@ -250,4 +251,4 @@ Holistic Youth Development & Mental Health Awareness for Life Skills and Purpose
     contributing to healthier families and stronger communities.
     Thriving Youth Pathways
     Raising Mentally Resilient, Life‑Skilled Youth
-    5" I want to give claude to build this using html, css and javascript , Nothing complicated just a basic website it should avoid colors that will show it was done by ai
+    5"
